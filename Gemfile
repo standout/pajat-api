@@ -55,9 +55,6 @@ group :development do
   # Guard allows us to do stuff automatically when project files change
   gem 'guard', '~> 2.13'
 
-  # Guard tasks for rails
-  gem 'guard-rails', '~> 0.7.2', require: false
-
   # Guard tasks for rspec
   gem 'guard-rspec', '~> 4.6', '>= 4.6.4', require: false
 end
