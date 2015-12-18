@@ -13,7 +13,7 @@ RSpec.describe ReportsController, type: :controller do
 
   describe 'listing' do
     before(:context) do
-      40.times { Report.create valid_create_params }
+      40.times { Report.create! valid_create_params }
     end
 
     it 'responds successfully' do
