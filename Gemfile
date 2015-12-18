@@ -48,6 +48,9 @@ group :development, :test do
   gem 'capistrano-rbenv', '~> 2.0'
   gem 'capistrano-rails', '~> 1.1', '>= 1.1.5'
   gem 'capistrano-passenger5-nginx', '~> 0.0.1'
+
+  # Use factories instead of yaml fixtures
+  gem 'factory_girl_rails', '~> 4.5'
 end
 
 group :development do
