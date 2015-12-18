@@ -17,7 +17,12 @@ class ReportsController < ApplicationController
       .permit(
         :latitude,
         :longitude,
-        :description
+        :description,
+        :agent,
+        :reporter_network,
+        :reporter_username,
+        :source_url,
+        :image_url
       )
   end
 end
