@@ -9,6 +9,12 @@ RSpec.describe ReportsController, type: :controller do
     it 'responds successfully' do
       expect(response).to be_successful
     end
+
+    it 'should fetch ip from agent' do
+      request.env['REMOTE_ADDR'] = '123.456.789.0'
+      create_report
+      expect(Report.last.agent_ip).to eq('123.456.789.0')
+    end
   end
 
   describe 'listing' do

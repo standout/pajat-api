@@ -2,6 +2,8 @@ class ReportsController < ApplicationController
 
   def create
     @report = Report.new report_create_params
+    @report.agent_ip = request.headers['X-Forwarded-For'] ||
+                       request.headers['REMOTE_ADDR']
     if @report.save
       render json: @report
     else
