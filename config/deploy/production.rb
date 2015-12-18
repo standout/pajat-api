@@ -11,7 +11,7 @@ role :app, %w{deploy@api.pajat.se}
 role :web, %w{deploy@api.pajat.se}
 role :db,  %w{deploy@api.pajat.se}
 
-server 'server9.standout.se', user: 'deploy', roles: %w{web app db}
+server 'api.pajat.se', user: 'deploy', roles: %w{web app db}
 set :rails_env, 'production'
 set :nginx_server_name, 'api.pajat.se'
 
