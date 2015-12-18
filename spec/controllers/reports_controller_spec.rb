@@ -2,25 +2,28 @@ require 'rails_helper'
 
 RSpec.describe ReportsController, type: :controller do
   describe 'creation' do
-    it 'should be created' do
-      expect do
-        post "create", report: valid_create_params
-      end.to change { Report.count }
+    it 'creates a report' do
+      expect { create_report }.to change { Report.count }
+    end
+
+    it 'responds successfully' do
       expect(response).to be_successful
     end
   end
 
   describe 'listing' do
-    describe 'latest reports' do
-      it 'can load the latest 30 reports' do
-        40.times do
-          Report.create valid_create_params
-        end
-        get :index
-        expect(response).to be_successful
-        json = JSON.parse response.body
-        expect(json.size).to eql(30)
-      end
+    before(:context) do
+      40.times { Report.create valid_create_params }
+    end
+
+    it 'responds successfully' do
+      list_reports
+      expect(response).to be_successful
+    end
+
+    it 'lists the 30 latest reports' do
+      list_reports
+      expect(json_response.size).to eq(30)
     end
   end
 
@@ -35,5 +38,13 @@ RSpec.describe ReportsController, type: :controller do
       source_url: 'https://twitter.com/azazell0/status/113728077904871424',
       image_url: 'https://example.com/1723640659/chimp_bigger.png'
     }
+  end
+
+  def list_reports
+    get :index
+  end
+
+  def create_report
+    post "create", report: valid_create_params
   end
 end
