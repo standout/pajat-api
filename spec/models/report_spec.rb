@@ -1,5 +1,31 @@
 require 'rails_helper'
 
 RSpec.describe Report, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe 'creation' do
+    it 'can be created' do
+      r = Report.new valid_attributes
+      expect(r).to be_valid
+    end
+
+    it 'needs a latitude' do
+      r = Report.new valid_attributes
+      r.latitude = nil
+      expect(r.valid?).to be false
+    end
+
+    it 'needs a description' do
+      r = Report.new valid_attributes
+      r.description = nil
+      expect(r.valid?).to be false
+    end
+  end
+
+  def valid_attributes
+    {
+      latitude: 12.4,
+      longitude: 85.2,
+      description: 'Test'
+    }
+  end
 end
