@@ -42,3 +42,6 @@ Style/TrivialAccessors:
 
 Style/SingleSpaceBeforeFirstArg:
   Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false

@@ -42,6 +42,12 @@ group :development, :test do
 
   # rspec-rails is a testing framework for Rails 3.x and 4.x.
   gem 'rspec-rails', '~> 3.0'
+
+  # add capistrano to ease deployment process
+  gem 'capistrano', '~> 3.4'
+  gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-rails', '~> 1.1', '>= 1.1.5'
+  gem 'capistrano-passenger5-nginx', '~> 0.0.1'
 end
 
 group :development do
