@@ -5,7 +5,7 @@ RSpec.describe Report, type: :model do
   describe 'creation' do
     it 'can be created' do
       r = Report.new valid_attributes
-      expect(r.valid?).to be true
+      expect(r).to be_valid
     end
 
     it 'needs a latitude' do
