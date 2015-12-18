@@ -1,0 +1,9 @@
+{
+  "latitude": "............",
+  "longitude": "............",
+  "description": "Something went wrong",
+  "tags": ["something", "went", "wrong"],
+  "agent": "standout-pajat-twitterbot 2.0",
+  "reporter_network": "twitter",
+  "reporter_username": "davidelbe"
+}
