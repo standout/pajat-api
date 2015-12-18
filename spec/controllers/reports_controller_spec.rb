@@ -8,6 +8,12 @@ RSpec.describe ReportsController, type: :controller do
       end.to change { Report.count }
       expect(response).to be_successful
     end
+
+    it 'should fetch ip from agent' do
+      request.env['REMOTE_ADDR'] = '123.456.789.0'
+      post "create", report: valid_create_params
+      expect(Report.last.agent_ip).to eq('123.456.789.0')
+    end
   end
 
   def valid_create_params
