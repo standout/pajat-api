@@ -10,6 +10,20 @@ RSpec.describe ReportsController, type: :controller do
     end
   end
 
+  describe 'listing' do
+    describe 'latest reports' do
+      it 'can load the latest 30 reports' do
+        40.times do
+          Report.create valid_create_params
+        end
+        get :index
+        expect(response).to be_successful
+        json = JSON.parse response.body
+        expect(json.size).to eql(30)
+      end
+    end
+  end
+
   def valid_create_params
     {
       latitude: 18,

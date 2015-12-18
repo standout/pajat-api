@@ -9,6 +9,11 @@ class ReportsController < ApplicationController
     end
   end
 
+  def index
+    @reports = Report.all.limit(30)
+    render json: @reports
+  end
+
   protected
 
   def report_create_params
