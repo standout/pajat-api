@@ -82,4 +82,7 @@ production:
   <<: *default
   database: pajat-api_production
   username: pajat-api
+  host: <%= ENV['PAJAT-API_DATABASE_HOST'] %>
+  port: 5432
+  pool: 16
   password: <%= ENV['PAJAT-API_DATABASE_PASSWORD'] %>
