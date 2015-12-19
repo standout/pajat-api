@@ -12,7 +12,12 @@ class ReportsController < ApplicationController
   end
 
   def index
-    @reports = Report.all.limit(30)
+    if params[:latitude] && params[:longitude]
+      @reports = Report
+                 .near([params[:latitude], params[:longitude]])
+    else
+      @reports = Report.all.limit(30)
+    end
     render json: @reports
   end
 

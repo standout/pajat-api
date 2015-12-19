@@ -7,6 +7,15 @@ addresses = {
     'state' => 'Kronoberg',
     'country' => 'Sweden',
     'country_code' => 'SE'
+  },
+  [57.301263, 13.5130047] => {
+    'latitude' => 57.301263,
+    'longitude' => 13.5130047,
+    'address' => 'Nygatan 1, Gislaved',
+    'city' => 'Gislaved',
+    'state' => 'Jönköping',
+    'country' => 'Sweden',
+    'country_code' => 'SE'
   }
 }
 
