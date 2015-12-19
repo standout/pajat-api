@@ -1,5 +1,4 @@
 class ReportsController < ApplicationController
-
   def create
     @report = Report.new report_create_params
     @report.agent_ip = request.headers['X-Forwarded-For'] ||
@@ -19,17 +18,9 @@ class ReportsController < ApplicationController
   protected
 
   def report_create_params
-    params
-      .require(:report)
-      .permit(
-        :latitude,
-        :longitude,
-        :description,
-        :agent,
-        :reporter_network,
-        :reporter_username,
-        :source_url,
-        :image_url
-      )
+    params.require(:report).permit(
+      :latitude, :longitude, :description, :agent, :reporter_network,
+      :reporter_username, :source_url, :image_url
+    )
   end
 end
