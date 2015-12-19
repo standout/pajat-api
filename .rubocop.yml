@@ -45,3 +45,9 @@ Style/SingleSpaceBeforeFirstArg:
 
 Style/PercentLiteralDelimiters:
   Enabled: false
+
+Style/AlignParameters:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false

@@ -63,4 +63,7 @@ group :development do
 
   # Guard tasks for rspec
   gem 'guard-rspec', '~> 4.6', '>= 4.6.4', require: false
+
+  # Check code style with RuboCop when files are modified.
+  gem 'guard-rubocop', '~> 1.2'
 end
