@@ -6,3 +6,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+r1 = FactoryGirl.create(:report_with_agent_ip)
+FactoryGirl.create(:comment_with_agent_ip, report: r1)

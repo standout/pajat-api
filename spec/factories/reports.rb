@@ -8,5 +8,9 @@ FactoryGirl.define do
     reporter_username 'davidelbe'
     source_url 'https://twitter.com/azazell0/status/113728077904871424'
     image_url 'https://example.com/1723640659/chimp_bigger.png'
+
+    factory :report_with_agent_ip do
+      agent_ip "1.2.3.4"
+    end
   end
 end

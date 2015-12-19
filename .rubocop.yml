@@ -51,3 +51,6 @@ Style/AlignParameters:
 
 Style/RegexpLiteral:
   Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
