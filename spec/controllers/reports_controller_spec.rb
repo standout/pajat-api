@@ -4,9 +4,6 @@ RSpec.describe ReportsController, type: :controller do
   describe 'creation' do
     it 'creates a report' do
       expect { create_report }.to change { Report.count }
-    end
-
-    it 'responds successfully' do
       expect(response).to be_successful
     end
 
