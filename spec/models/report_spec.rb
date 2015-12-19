@@ -1,31 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe Report, type: :model do
+  describe "validation" do
+    context "valid attributes" do
+      subject { build(:report) }
 
-  describe 'creation' do
-    it 'can be created' do
-      r = Report.new valid_attributes
-      expect(r).to be_valid
+      it { should be_valid }
     end
 
-    it 'needs a latitude' do
-      r = Report.new valid_attributes
-      r.latitude = nil
-      expect(r.valid?).to be false
+    context "missing latitude" do
+      subject { build(:report, latitude: nil) }
+
+      it { should be_invalid }
     end
 
-    it 'needs a description' do
-      r = Report.new valid_attributes
-      r.description = nil
-      expect(r.valid?).to be false
-    end
-  end
+    context "missing description" do
+      subject { build(:report, description: nil) }
 
-  def valid_attributes
-    {
-      latitude: 12.4,
-      longitude: 85.2,
-      description: 'Test'
-    }
+      it { should be_invalid }
+    end
   end
 end
