@@ -23,8 +23,8 @@ RSpec.describe Report, type: :model do
 
   def valid_attributes
     {
-      latitude: 12.4,
-      longitude: 85.2,
+      latitude: 56.878333,
+      longitude: 14.809167,
       description: 'Test'
     }
   end

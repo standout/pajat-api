@@ -35,8 +35,8 @@ RSpec.describe ReportsController, type: :controller do
 
   def valid_create_params
     {
-      latitude: 18,
-      longitude: 20,
+      latitude: 56.878333,
+      longitude: 14.809167,
       description: 'test',
       agent: 'testbot 0.1.2',
       reporter_network: 'twitter',
