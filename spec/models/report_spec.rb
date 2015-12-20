@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Report, type: :model do
-
   describe 'creation' do
     it 'can be created' do
       r = Report.new valid_attributes
