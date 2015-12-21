@@ -24,18 +24,16 @@ class ReportsController < ApplicationController
 
   # rubocop:disable Metrics/MethodLength
   def report_create_params
-    params
-      .require(:report)
-      .permit(
-        :latitude,
-        :longitude,
-        :description,
-        :agent,
-        :reporter_network,
-        :reporter_username,
-        :source_url,
-        :image_url
-      )
+    params.require(:report).permit(
+      :latitude,
+      :longitude,
+      :description,
+      :agent,
+      :reporter_network,
+      :reporter_username,
+      :source_url,
+      :image_url
+    )
   end
   # rubocop:enable Metrics/MethodLength
 end

@@ -39,6 +39,7 @@ gem 'geocoder'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem "rubocop"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
   # console
   gem 'byebug'
@@ -66,4 +67,7 @@ group :development do
 
   # Guard tasks for rspec
   gem 'guard-rspec', '~> 4.6', '>= 4.6.4', require: false
+
+  # Check code style with RuboCop when files are modified.
+  gem 'guard-rubocop', '~> 1.2'
 end

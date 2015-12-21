@@ -18,7 +18,7 @@ server {
   <% end %>
   server_name <%= fetch(:nginx_server_name) %>;
 
-  passenger_ruby /home/deploy/.rbenv/versions/<%= fetch(:rbenv_ruby) %>/bin/ruby;
+  passenger_ruby /home/deploy/.rbenv/shims/ruby;
   passenger_enabled on;
   passenger_app_env <%= fetch(:rails_env) %>;
 
