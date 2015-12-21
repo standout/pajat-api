@@ -1,5 +1,4 @@
 class ReportsController < ApplicationController
-
   def create
     @report = Report.new report_create_params
     @report.agent_ip = request.headers['X-Forwarded-For'] ||
@@ -23,6 +22,7 @@ class ReportsController < ApplicationController
 
   protected
 
+  # rubocop:disable Metrics/MethodLength
   def report_create_params
     params
       .require(:report)
@@ -37,4 +37,5 @@ class ReportsController < ApplicationController
         :image_url
       )
   end
+  # rubocop:enable Metrics/MethodLength
 end
