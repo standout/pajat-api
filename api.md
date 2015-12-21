@@ -1,5 +1,17 @@
 # API - pajat
 
+## Latest
+
+    GET /reports
+
+## Near a location
+
+Return all reports near a given location. Latitude and longitude
+should be given in Signed Degrees format, ie (lat: 56.89, long: 14.8)
+representing Växjö, Sweden. You could add up to 6 decimals for precision.
+
+    GET /reports/near/:lat/:long
+
 ## Create
 
     POST /reports

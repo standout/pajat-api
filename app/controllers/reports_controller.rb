@@ -15,6 +15,11 @@ class ReportsController < ApplicationController
     render json: @reports
   end
 
+  def near
+    @reports = Report.near([params[:latitude], params[:longitude]])
+    render json: @reports
+  end
+
   protected
 
   def report_create_params

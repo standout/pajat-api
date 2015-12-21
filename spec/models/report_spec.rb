@@ -18,12 +18,18 @@ RSpec.describe Report, type: :model do
       r.description = nil
       expect(r.valid?).to be false
     end
+
+    it 'gets an address' do
+      r = Report.create! valid_attributes
+      expect(r.city).to eq("Växjö")
+      expect(r.country).to eq("Sweden")
+    end
   end
 
   def valid_attributes
     {
-      latitude: 12.4,
-      longitude: 85.2,
+      latitude: 56.878333,
+      longitude: 14.809167,
       description: 'Test'
     }
   end
