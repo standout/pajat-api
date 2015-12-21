@@ -22,7 +22,6 @@ class ReportsController < ApplicationController
 
   protected
 
-  # rubocop:disable Metrics/MethodLength
   def report_create_params
     params.require(:report).permit(
       :latitude,
@@ -35,5 +34,4 @@ class ReportsController < ApplicationController
       :image_url
     )
   end
-  # rubocop:enable Metrics/MethodLength
 end
