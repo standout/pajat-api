@@ -11,6 +11,7 @@ AllCops:
     - db/schema.rb
     - Gemfile
     - Guardfile
+    - config/Guardfile
     - Rakefile
 
 Metrics/LineLength:
