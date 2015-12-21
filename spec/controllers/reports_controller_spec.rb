@@ -43,7 +43,7 @@ RSpec.describe ReportsController, type: :controller do
     end
 
     it 'lists only reports near location' do
-      get :index, latitude: 56.878333, longitude: 14.809167
+      get :near, latitude: 56.878333, longitude: 14.809167
       expect(json_response.size).to eq(3)
       expect(json_response.first['latitude']).to eq(56.878333)
     end
