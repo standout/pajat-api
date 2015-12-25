@@ -1,7 +1,8 @@
+inherit_from:
+  - https://raw.githubusercontent.com/standout/Coding/master/ruby/rubocop.yml
+
+# Project specific settings
 AllCops:
-  RunRailsCops: true
-  DisplayCopNames: true
-  DisplayStyleGuide: true
   Exclude:
     - "bin/*"
     - Capfile
@@ -14,10 +15,6 @@ AllCops:
     - config/Guardfile
     - Rakefile
 
-Metrics/LineLength:
-  Exclude:
-    - "config/**/*"
-
 Metrics/AbcSize:
   Exclude:
     - "spec/features/*"
@@ -26,22 +23,7 @@ Metrics/MethodLength:
   Exclude:
     - "spec/features/*"
 
-Style/ClassAndModuleChildren:
-  Enabled: false
-
-Style/Documentation:
-  Enabled: false
-
-Style/DoubleNegation:
-  Enabled: false
-
 Style/StringLiterals:
-  Enabled: false
-
-Style/TrivialAccessors:
-  AllowPredicates: true
-
-Style/SingleSpaceBeforeFirstArg:
   Enabled: false
 
 Style/PercentLiteralDelimiters:
